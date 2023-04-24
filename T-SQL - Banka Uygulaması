@@ -35,7 +35,7 @@ Begin
 	Select @HesaptakiPara = Bakiye from ABanka Where HesapNo = @GonderenHesapNo
 	If @Tutar > @HesaptakiPara
 	Begin
-		print CAST(@GonderenHesapNo as nvarchar(MAX)) + ' numaralı hesapta, gönderilmek istenen tutardan  az para mevcuttur.' 
+		print CAST(@GonderenHesapNo as nvarchar(MAX)) + ' numaralı hesapta, gönderilmek istenen tutardan az para mevcuttur.' 
 		Rollback -- İşlemleri Geri Al
 	End
 	Else
@@ -74,7 +74,6 @@ Begin
 		Commit
 	End
 End
-
 
 Exec sp_HavaleYap 'ABanka', 10,30, 100
 Exec sp_HavaleYap 'BBanka', 30, 10, 300
